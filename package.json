@@ -1,0 +1,32 @@
+{
+  "name": "mean-ang2",
+  "version": "1.0.0",
+  "description": "Social Media Blog Site",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "cd client && ng build --prod && cd.. && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gugui3z24/MEAN-Stack-With-Angular-2-Tutorial.git"
+  },
+  "keywords": [
+    "MEAN",
+    "Stack",
+    "Angular",
+    "2",
+    "Application"
+  ],
+  "author": "Tenzing Sherpa",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
+    "mongoose": "^4.10.2",
+    "ng2-modal": "0.0.25"
+  }
+}

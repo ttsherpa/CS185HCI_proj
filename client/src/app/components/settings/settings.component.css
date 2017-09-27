@@ -1,0 +1,9 @@
+@media screen and (max-width: 480px) {
+    .settingscontent {
+        width: 325px!important;
+    }
+}
+
+button{
+    width: 90px;
+}

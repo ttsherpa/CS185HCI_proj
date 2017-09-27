@@ -1,0 +1,42 @@
+<!-- Custom Success/Error Message -->
+
+
+<div class="center-block modalsize" style="width: 400px; margin-top: 40px;" >
+    <div class="row show-hide-message">
+        <div [ngClass]="messageClass">
+          {{ message }}
+        </div>
+      </div>
+<div class="modal-content">
+    <div class="modal-body" style="text-align: center;">
+        <i class="fa fa-globe fa-5x"></i><span style="font-size: 30px;">Bloggers World</span>
+<!-- Login Form -->
+<form [formGroup]="form" (submit)="onLoginSubmit()" style="margin-top: 20px;" autocomplete="off">
+
+  <!-- Username Field -->
+  <div class="form-group">
+    <div [ngClass]="{'has-error': form.controls.username.errors && form.controls.username.dirty, 'has-success': form.controls.username.valid && form.controls.username.dirty }">
+      <input class="form-control" type="text" autocomplete="off" name="username" placeholder="Username" formControlName="username" />
+      <!-- Validation -->
+      <ul class="help-block">
+        <li *ngIf="form.controls.username.errors?.required && form.controls.username.dirty">This field is required.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Password Field  -->
+  <div class="form-group">
+    <div [ngClass]="{'has-error': form.controls.password.errors && form.controls.password.dirty, 'has-success': form.controls.password.valid && form.controls.password.dirty }">
+      <input class="form-control" type="password" name="password" placeholder="Password" formControlName="password" />
+      <!-- Validation -->
+      <ul class="help-block">
+        <li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty">This field is required.</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Submit Button -->
+  <input [disabled]="!form.valid || processing" class="btn btn-primary" type="submit" value="Login" />
+</form>
+    </div>
+</div>
+</div>

@@ -1,0 +1,33 @@
+<div class="row show-hide-message" *ngIf="message">
+    <div [ngClass]="messageClass">
+      {{ message }}
+    </div>
+  </div>
+  
+  <!-- Modal Confirmation Window -->
+  <div class="center-block modalsize" style="width: 600px; margin-top: 40px;" >
+  <div class="col-md-12" style="text-align: center;">
+    <!-- Model Outer Layer -->
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <!-- Close Button -->
+        <!-- Modal Title -->
+        <h4 class="modal-title" >Confirm</h4>
+      </div>
+  
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <p>Are you sure you would like to delete this user?</p>
+      </div>
+  
+      <!-- Modal Footer -->
+      <div class="modal-footer" style="text-align: center;">
+        <!-- Yes Button -->
+       <button [disabled]="processing" type="button" name="button" class="btn btn-success" (click)="deleteUser()">Yes</button>
+        <!-- No Button --> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a routerLink="/settings"><button [disabled]="processing" type="button" name="button" class="btn btn-danger">No</button></a>
+      </div>
+    </div>
+  </div>
+  </div>

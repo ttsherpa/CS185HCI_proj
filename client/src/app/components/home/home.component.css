@@ -1,0 +1,17 @@
+a.btn{
+    width: 90px;
+}
+
+.btn-success{
+    width: 110px!important;
+}
+
+@media screen and (max-width: 480px) {
+    .fa-globe {
+        font-size: 100px!important;
+    }
+
+    .lead{
+        font-size: 15px!important;
+    }
+}

@@ -1,0 +1,22 @@
+.submit {
+    width: 150px;
+}
+
+.canvas {
+    border-style: solid;
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    img-cropper{
+        width: 100px!important;
+        margin-left: 20px!important;
+    }
+
+}
+
+
+

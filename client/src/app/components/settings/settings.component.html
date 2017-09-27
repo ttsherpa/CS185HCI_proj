@@ -1,0 +1,20 @@
+<h2 style="text-align: center; margin-bottom: 20px;">Users Setting</h2>
+<div class="center-block settingscontent" style="width: 400px;" >
+    <!-- Model Outer Layer -->
+    <div class="modal-content">
+      <!-- Modal Header -->
+  
+      <!-- Modal Body -->
+      <div class="modal-body" >
+        <ul style="list-style: none;">
+          <li><a [routerLink]="['/updatePassword/', username]"><button type="button" name="button" class="btn btn-sm btn-danger" style="display: inline-block;">Password</button></a><p style="display: inline-block;"> &nbsp; Update Password?</p></li>
+          <br>
+          <li><a [routerLink]="['/delete-user/', username]"><button type="button" name="button" class="btn btn-sm btn-danger" style="display: inline-block;">Delete</button></a><p style="display: inline-block;"> &nbsp; Delete Account?</p></li>
+       </ul>
+        </div>
+  
+      <!-- Modal Footer -->
+    </div>
+  </div>
+
+

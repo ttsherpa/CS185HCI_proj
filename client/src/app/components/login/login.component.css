@@ -1,0 +1,9 @@
+@media screen and (max-width: 480px) {
+    span {
+        display: none;
+    }
+
+    .modalsize {
+        width: 300px!important;
+    }
+}
