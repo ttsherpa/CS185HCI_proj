@@ -39,9 +39,9 @@ export class RegisterComponent implements OnInit {
   @ViewChild('cropper', undefined) cropper:ImageCropperComponent;
 
   constructor(
-    public formBuilder: FormBuilder,
+    private formBuilder: FormBuilder,
     public authService: AuthService,
-    public router: Router,
+    private router: Router,
    
   ) {
     this.createForm(); // Create Angular 2 Form when component loads
