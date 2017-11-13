@@ -1,29 +1,21 @@
 <!-- Fixed navbar -->
-<nav class="navbar navbar-default">
-  <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-         <span class="sr-only">Toggle navigation</span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
        </button>
       <a class="navbar-brand" routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" ><i class="fa fa-2x fa-globe" aria-hidden="true" style="margin-top: -12px;"><span style="font-size: 30px; margin-top: 30px;">BloggersWorld</span></i></a>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-left">
-        <!-- <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/">Home</a></li> -->
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
+    <div class="navbar-collapse collapse show" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
         <!-- <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/dashboard">Dashboard</a></li> -->
-        <li><a *ngIf="authService.loggedIn()" routerLink="/profile">Profile</a></li>
-        <li><a *ngIf="authService.loggedIn()" routerLink="/settings">Settings</a></li>
-        <li><a *ngIf="authService.loggedIn()" routerLink="/blog">Blog Feed</a></li>
-        <li><a *ngIf="!authService.loggedIn()" routerLink="/login">Login</a></li>
-        <li><a *ngIf="authService.loggedIn()" href="#" (click)="onLogoutClick()">Logout</a></li>
-        <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a routerLink="/register">Register</a></li>
+        <li class="nav-item active"><a *ngIf="authService.loggedIn()" routerLink="/profile">Profile</a></li>
+        <li class="nav-item"><a *ngIf="authService.loggedIn()" routerLink="/settings">Settings</a></li>
+        <li class="nav-item"><a *ngIf="authService.loggedIn()" routerLink="/blog">Blog Feed</a></li>
+        <li class="nav-item"><a *ngIf="!authService.loggedIn()" routerLink="/login">Login</a></li>
+        <li class="nav-item"><a *ngIf="authService.loggedIn()" href="#" (click)="onLogoutClick()">Logout</a></li>
+        <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" class="nav-item"><a routerLink="/register">Register</a></li>
       </ul>
     </div>
     <!--/.nav-collapse -->
-  </div>
 </nav>
