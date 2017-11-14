@@ -6,7 +6,7 @@
 </div>
 
 <!-- Registration Form -->
-<form [formGroup]="form" (submit)="onRegisterSubmit()">
+<form [formGroup]="form" (submit)="onRegisterSubmit()" style="margin-top: 40px;">
 
   <!-- Username Input -->
   <div class="form-group">
@@ -81,33 +81,39 @@
 
   <div class="form-group">
       <label for="profilepicture">Profile Picture (After Choose File click upload) </label>
-      <!-- <div [ngClass]="{'has-error': (form.controls.profilepicture.errors && form.controls.profilepicture.dirty), 'has-success': !form.controls.profilepicture.errors}"> -->
-        <!-- <ul class="help-block">
-          <li *ngIf="form.controls.profilepicture.errors?.required && form.controls.profilepicture.dirty">This field is required</li>
-        </ul>
-      </div> -->
-     
-          <button type = "button" class="btn btn-primary" (click)="myModal.open()">Add Profile Picture</button>
-          <modal #myModal>
-              <modal-header>
-                  <h1 style="text-align: center;">Upload Profile Picture</h1>
-              </modal-header>
-              <modal-content>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Add Profile Picture
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Upload Profile Picture</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
                 <input id="custom-input" type="file" (change)="fileChangeListener($event)"  ng2FileSelect [uploader]="uploader" accept="image/*;capture=camera" name="profilepicture"  class="center-block prof" style="margin-left: 25%;"> <br/>
                 <img-cropper #cropper [image]="data2" [settings]="cropperSettings2" class="center-block" style="margin-left: 23%;"></img-cropper>
                 <br>
                 <span class="result rounded" *ngIf="data2.image" >
                     <img [src]="data2.image" [width]="cropperSettings2.croppedWidth" [height]="cropperSettings2.croppedHeight" class=" thumbnail center-block">
                 </span>
-              </modal-content>
-              <modal-footer>
-                  <button type="button" class="btn-sm btn-primary button center-block" (click)="upload()" style="margin-top: 5px;">Upload</button>
-                  <h3 *ngIf="success" style="color: green; text-align: center;">Success now close.</h3>
-                  <h3 *ngIf="!success" style="color: red; text-align: center;">No Image has been processed.</h3>
-              </modal-footer>
-          </modal>
-    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-sm btn-primary button center-block" (click)="upload()" style="margin-top: 5px;">Upload</button>
+                <h3 *ngIf="success" style="color: green; text-align: center;">Success now close.</h3>
+                <h3 *ngIf="!success" style="color: red; text-align: center;">No Image has been processed.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
 
+    </div> 
 
     <!-- <input type="file" accept="image/*;capture=camera"> -->
     

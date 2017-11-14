@@ -1,8 +1,8 @@
-<h2 class="page-header" style="text-align: center; margin-top: 20px;">{{name}}</h2>
-<div class="center-block frame">
-  <img src="{{profilepicture}}" class="img-thumbnail img-responsive center-block" style="margin-bottom: 30px; margin-top: -20px" >
+<h2 class="page-header" style="text-align: center; margin-top: 30px;">{{name}}</h2>
+<div class="mx-auto frame">
+  <img src="{{profilepicture}}" class="img-thumbnail img-responsive mx-auto" >
 </div>
-  <ul class="list-group center-block" style="width: 250px; text-align: center;" >
+  <ul class="list-group mx-auto" style="width: 250px; text-align: center; margin-top: 10px;" >
   <li class="list-group-item">Username: {{ user }}</li>
   <li class="list-group-item">Email: {{ email }}</li>
 </ul>
@@ -14,7 +14,7 @@
   </div>
 
   
-  <!-- New Post Button --> <div style="text-align: center;">
+  <!-- New Post Button --> <div style="text-align: center; margin-top:10px;">
   <button type="button" name="button" class="btn btn-warning" *ngIf="!newPost" (click)="newBlogForm()">New Post</button>
   
   <!-- Reload Button -->
