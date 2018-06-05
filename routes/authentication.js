@@ -279,6 +279,17 @@ module.exports = (router) => {
       });
   });
 
+  router.get('/usersList', (req, res) => {
+    User.find({}, (err, users)=> {
+      if(err){
+        res.send('something went really wrong');
+      }
+      else{
+        res.json(users);
+      }
+    });
+  });
+
       
 
   return router; // Return router object to main index.js

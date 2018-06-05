@@ -14,6 +14,7 @@ import { PublicProfileComponent } from './components/public-profile/public-profi
 import { SettingsComponent } from "app/components/settings/settings.component";
 import { DeleteUserComponent } from "app/components/settings/delete-user/delete-user.component";
 import { UpdatePasswordComponent } from "app/components/settings/update-password/update-password.component";
+import { D3Component } from './components/d3/d3.component';
 
 // Our Array of Angular 2 Routes
 const appRoutes: Routes = [
@@ -74,6 +75,11 @@ const appRoutes: Routes = [
   {
     path: 'updatePassword/:username',
     component: UpdatePasswordComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'data',
+    component: D3Component,
     canActivate: [AuthGuard]
   },
   { path: '**', component: HomeComponent } // "Catch-All" Route

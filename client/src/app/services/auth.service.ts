@@ -92,4 +92,11 @@ export class AuthService {
     this.createAuthenticationHeaders(); // Create headers
     return this.http.put(this.domain + 'authentication/updatePassword/' + user.username, user, this.options).map(res => res.json());
   }
+
+  //get users datas
+
+  getData(){
+    this.createAuthenticationHeaders();
+    return this.http.get(this.domain+'authentication/usersList/', this.options).map(res=> res.json());
+  }
 }

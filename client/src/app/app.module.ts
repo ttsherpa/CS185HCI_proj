@@ -27,6 +27,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { DeleteUserComponent } from './components/settings/delete-user/delete-user.component';
 import { UpdatePasswordComponent } from './components/settings/update-password/update-password.component';
 import { ImageCropperModule } from 'ng2-img-cropper';
+import { D3Component } from './components/d3/d3.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ImageCropperModule } from 'ng2-img-cropper';
     PublicProfileComponent,
     SettingsComponent,
     DeleteUserComponent,
-    UpdatePasswordComponent
+    UpdatePasswordComponent,
+    D3Component
     
   ],
   imports: [
