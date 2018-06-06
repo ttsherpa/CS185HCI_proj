@@ -111,6 +111,9 @@ export class RegisterComponent implements OnInit {
       name: ['', Validators.compose([
         Validators.required //Field is required
       ])],
+      bday: ['', Validators.compose([
+        Validators.required //Field is required
+      ])],
       // Password Input
       password: ['', Validators.compose([
         Validators.required, // Field is required
@@ -133,6 +136,7 @@ export class RegisterComponent implements OnInit {
     this.form.controls['username'].disable();
     this.form.controls['password'].disable();
     this.form.controls['confirm'].disable();
+    this.form.controls['bday'].disable();
     // this.form.controls['profilepicture'].disable();
   }
 
@@ -142,6 +146,7 @@ export class RegisterComponent implements OnInit {
     this.form.controls['username'].enable();
     this.form.controls['password'].enable();
     this.form.controls['confirm'].enable();
+    this.form.controls['bday'].enable();
     // this.form.controls['profilepicture'].enable();
     
   }
@@ -204,7 +209,8 @@ export class RegisterComponent implements OnInit {
       username: this.form.get('username').value, // Username input field
       password: this.form.get('password').value, // Password input field
       name: this.form.get('name').value, //Name input field
-      profilepicture: this.imageId
+      profilepicture: this.imageId, //Profile Picture
+      bday: this.form.get('bday').value
     }
 
     // Function from authentication service to register user

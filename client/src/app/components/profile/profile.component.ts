@@ -3,6 +3,8 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { AuthService } from '../../services/auth.service';
 import { BlogService } from '../../services/blog.service';
 
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-profile',
@@ -26,6 +28,7 @@ export class ProfileComponent implements OnInit {
   name = '';
   profilepicture='';
   password='';
+  bday;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -45,7 +48,7 @@ export class ProfileComponent implements OnInit {
       this.name = profile.user.name;
       this.profilepicture = profile.user.profilepicture;
       this.password = profile.user.password;
-      console.log(profile);
+      this.bday = profile.user.bday;
     });
 
     this.getAllBlogs(); // Get all blogs on component load

@@ -135,7 +135,8 @@ const userSchema = new Schema({
   username: { type: String, required: true, unique: true, lowercase: true, validate: usernameValidators },
   password: { type: String, required: true, validate: passwordValidators },
   name: {type: String, required: true },
-  profilepicture: {type: String}
+  profilepicture: {type: String},
+  bday: {type: Date, required: true}
 });
 
 // Schema Middleware to Encrypt Password

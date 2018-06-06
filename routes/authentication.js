@@ -29,7 +29,8 @@ module.exports = (router) => {
             username: req.body.username.toLowerCase(),
             password: req.body.password,
             name: req.body.name,
-            profilepicture: req.body.profilepicture
+            profilepicture: req.body.profilepicture,
+            bday: req.body.bday
           });
           // Save user to database
           user.save((err) => {
@@ -56,9 +57,14 @@ module.exports = (router) => {
                         if(err.errors.name){
                           res.json({success: false, message: err.errors.name.message});
                         } else{
+                          if(err.errors.bday){
+                            res.json({success: false, message: err.errors.bday.message});
+                          }
+                          else{
                         res.json({ success: false, message: err }); // Return any other error not already covered
                         }
                       }
+                    }
                     }
                   }
                 } else {
@@ -194,7 +200,7 @@ module.exports = (router) => {
   =============================================================== */
   router.get('/profile', (req, res) => {
     // Search for user in database
-    User.findOne({ _id: req.decoded.userId }).select('username email name profilepicture password').exec((err, user) => {
+    User.findOne({ _id: req.decoded.userId }).select('username email name profilepicture password bday').exec((err, user) => {
       // Check if error connecting
       if (err) {
         res.json({ success: false, message: err }); // Return error
