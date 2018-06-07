@@ -18,6 +18,7 @@ export class D3Component implements OnInit {
   myblogsdata;
   stats;
   greatestusers;
+  personalblogs;
 
   //d3js
   title: string = 'D3.js with Angular 2!';
@@ -60,7 +61,8 @@ export class D3Component implements OnInit {
   getmyblogs(user){
     this.blogService.getAllBlogs().subscribe(data => {
       this.myblogsdata = data.blogs;
-      this.myblogsdata.filter(blog => blog.createdBy == user);
+      this.personalblogs = (this.myblogsdata.filter(blog => blog.createdBy == user));
+      var myblogs = this.personalblogs;
     });
   }
 
